@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">LearnTextModifiers</string>
+    <string name="hello_text">Hello World From String Value</string>
+</resources>
