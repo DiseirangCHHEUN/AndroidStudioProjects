@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="buttonMargin">7dp</dimen>
+    <dimen name="normalPadding">8dp</dimen>
+    <dimen name="enoughElevation">8dp</dimen>
+    <dimen name="enoughRadius">8dp</dimen>
+
+</resources>

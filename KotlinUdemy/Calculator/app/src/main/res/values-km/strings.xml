@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">CalculatorApp</string>
+    <string name="first_number">តម្លៃទី១</string>
+    <string name="second_number">តម្លៃទី២</string>
+    <string name="resultLabel">លទ្ធផល</string>
+    <string name="str_enter_first_input">សូមបញ្ចូលលេខទី១</string>
+    <string name="str_enter_second_input">សូមបញ្ចូលលេខទី២</string>
+    <string name="hintNumber">១២៣៤៥៦៧៨៩០</string>
+    <string name="str_startGame">ចាប់ផ្តើមលេង</string>
+    <string name="guess_number">ទស្សន៍ទាយ</string>
+    <string name="str_go">ទៅ</string>
+    <string name="str_report">Report</string>
+    <string name="str_start">ចាប់ផ្តើម</string>
+
+</resources>
