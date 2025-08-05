@@ -123,7 +123,7 @@ fun TipTimeLayout() {
         )
         Text(
             text = stringResource(R.string.tip_amount, tip),
-            style = MaterialTheme.typography.displaySmall
+            style = MaterialTheme.typography.headlineSmall
         )
         Spacer(modifier = Modifier.height(150.dp))
     }
