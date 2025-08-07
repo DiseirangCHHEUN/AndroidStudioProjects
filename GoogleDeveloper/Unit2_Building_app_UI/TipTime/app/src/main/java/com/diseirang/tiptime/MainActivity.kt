@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
+import androidx.annotation.VisibleForTesting
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -52,10 +53,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             TipTimeTheme {
                 Surface(
-                    Modifier
-                        .fillMaxSize()
-                        .background(MaterialTheme.colorScheme.tertiaryContainer),
-                    color = MaterialTheme.colorScheme.background
+                    Modifier.fillMaxSize()
                 ) {
                     TipTimeLayout()
                 }
@@ -68,9 +66,10 @@ class MainActivity : ComponentActivity() {
 fun TipTimeLayout() {
     var amountInput by remember { mutableStateOf("") }
     var tipInput by remember { mutableStateOf("") }
+    var roundUp by remember { mutableStateOf(false) }
+
     val amount = amountInput.toDoubleOrNull() ?: 0.0
     val tipPercent = tipInput.toDoubleOrNull() ?: 0.0
-    var roundUp by remember { mutableStateOf(false) }
 
     val tip = calculateTip(amount = amount, tipPercent = tipPercent, roundTip = roundUp)
     Column(
@@ -109,7 +108,7 @@ fun TipTimeLayout() {
                 keyboardType = KeyboardType.Number,
                 imeAction = ImeAction.Done
             ),
-            leadingIcon = R.drawable.money,
+            leadingIcon = R.drawable.percent,
             modifier = Modifier
                 .padding(bottom = 32.dp)
                 .fillMaxWidth()
@@ -132,7 +131,7 @@ fun TipTimeLayout() {
 @Composable
 fun EditNumberField(
     @StringRes label: Int,
-    @DrawableRes leadingIcon : Int,
+    @DrawableRes leadingIcon: Int,
     keyboardOptions: KeyboardOptions,
     value: String,
     onValueChange: (String) -> Unit,
@@ -174,13 +173,14 @@ fun RoundTheTipRow(
     }
 }
 
-private fun calculateTip(
+@VisibleForTesting
+internal fun calculateTip(
     amount: Double,
     tipPercent: Double = 15.0,
-    roundTip : Boolean
-    ): String {
+    roundTip: Boolean
+): String {
     var tip = tipPercent / 100 * amount
-    if(roundTip){
+    if (roundTip) {
         tip = kotlin.math.ceil(tip)
     }
     return NumberFormat.getCurrencyInstance().format(tip)
