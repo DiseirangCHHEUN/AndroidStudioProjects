@@ -24,6 +24,7 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
@@ -184,6 +185,7 @@ internal fun calculateTip(
     }
     return NumberFormat.getCurrencyInstance().format(tip)
 }
+
 
 @Preview(showBackground = true)
 @Composable
