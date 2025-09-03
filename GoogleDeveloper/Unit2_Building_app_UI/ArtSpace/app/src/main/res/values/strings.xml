@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">ArtSpace</string>
+    <string name="title_1">ArtSpace 1</string>
+    <string name="title_2">ArtSpace 2</string>
+    <string name="title_3">ArtSpace 3</string>
+    <string name="title_4">ArtSpace 4</string>
+    <string name="title_5">ArtSpace 5</string>
+    <string name="title_6">ArtSpace 6</string>
+
+    <string name="description_1">Description 1</string>
+    <string name="description_2">Description 2</string>
+    <string name="description_3">Description 3</string>
+    <string name="description_4">Description 4</string>
+    <string name="description_5">Description 5</string>
+    <string name="description_6">Description 6</string>
+</resources>
